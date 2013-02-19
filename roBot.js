@@ -6,26 +6,22 @@ Rock Paper Scissors roBot
 The roBot will use previous Fight Data inorder to predict the best move and claim supreme victory over all other bots. 
 */
 
-var rpsScore,oppScore,lastMove,battle,moveCScissors,moveCRock,set;
-set = 0;
+
 RPS.Player.rpsBot = function()
 		{
-			with(this)
-		
-			{// Variables Producer
+			// Variables Producer
 
 				// CounterMoves
-				moveCRock = 0;
-				moveCScissors = 0;
-				moveCPaper = 0;
+				this.moveCRock = 0;
+				this.moveCScissors = 0;
+				this.moveCPaper = 0;
 				// Battle Counter
-				battle = 0;
+				this.battle = 0;
 				// Last Move Made
-				lastMove = 0;
+				this.lastMove = 0;
 				// Score counting
-				oppScore = 0;
-				rpsScore = 0;
-				drawGame = 0;
+				this.rpsScore = 0;
+				this.drawGame = 0;
 				
 			}
 
@@ -82,10 +78,7 @@ RPS.Player.rpsBot.NAME = "rpsBot";
 					{// Die horrible move.   
 						 arrMoves.splice(iIter,0);
 						 arrMoveDef.splice(iIter,0);
-						 //  // console.log("iIter " + iIter + " destroyed.");
-						 //  // console.log(arrMoves.toString());
-						 //  // console.log(arrMoveDef.toString());
-				        numWorstMoveInd = iIter;		
+						 numWorstMoveInd = iIter;		
 					}
 				}
 
@@ -153,11 +146,11 @@ RPS.Player.rpsBot.NAME = "rpsBot";
 				case -1:
 				
 					var wordScore = "rpsBot submitted defeat!"; 
-					oppScore++;
+					this.oppScore++;
 				break;
 				case 0: 	
 					var wordScore = "rpsBot ended in a tie!";
-					drawGame++;
+					this.drawGame++;
 				break;	
 				}
 
