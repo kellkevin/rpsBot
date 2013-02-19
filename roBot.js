@@ -118,10 +118,7 @@ RPS.Player.rpsBot.NAME = "rpsBot";
 			{
 				battle++; // add battle
 				
-				   // console.log("Battle " + battle + " results://////////////////////////////////////////");
-				   // console.log("Opponent uses " + opponentMove);
-				   // console.log(RPS.Player.rpsBot.NAME + " uses " + RPS.Player.rpsBot.lastMove);
-				var wordScore = "rpsBot reigns victorious!";
+				var wordScore;
 				switch(opponentMove)
 				{// add the opponent counter move regardless of a win/loss
 					case "1": // rock
@@ -141,16 +138,17 @@ RPS.Player.rpsBot.NAME = "rpsBot";
 				switch(result)
 				{// if the move was a winner 
 				case 1: 
-				rpsScore++;
+				wordScore =  "rpsBot reigns victorious!";
+				this.rpsScore++; // add to score << this is for testing only
 				break;	
 				case -1:
 				
 					var wordScore = "rpsBot submitted defeat!"; 
-					this.oppScore++;
+					this.oppScore++; // add to score << this is for testing only
 				break;
 				case 0: 	
 					var wordScore = "rpsBot ended in a tie!";
-					this.drawGame++;
+					this.drawGame++; // add to score << this is for testing only
 				break;	
 				}
 
@@ -160,7 +158,7 @@ RPS.Player.rpsBot.NAME = "rpsBot";
 				//if(battle == 100)
 				//{
 					/// exit;
-					set++;
+					set++; // add to set
 					 // console.log("Set " + set +"\n FINAL: Opponent = "+ oppScore + " | rpsBot ="  +rpsScore + " Draws =" +  drawGame);
 						
 				//}
